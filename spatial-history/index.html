@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Title Here | by Your Name</title>
+        <title>Gandhi's Salt March | by Siddhant Jain</title>
         <meta charset="UTF-8"> 
         <meta name="description" content="a markdown-based mapping exercise." />
         <!-- these script tags load important javascript "libraries"
@@ -46,7 +46,7 @@
     <body onload="initializePage();">
 
         <header id="page-header" class="nav">
-            <a class="navbar-brand pull-right" href="#">Title Here | by Your Name</a> <!-- title should be descriptive -->
+            <a class="navbar-brand pull-right" href="#">Gandhi's Salt March | by Siddhant Jain</a> <!-- title should be descriptive -->
             <!-- menu content is set in ../js/static-parts.js and appended here -->
         </header>
 
@@ -57,7 +57,7 @@
             <section id="map_canvas"></section>
             <section id="legend">
                 <!-- this button will reset the map to its initial zoom and bounds  -->
-                <h1>Legend <button class="rounded" id="reset" onclick="resetMap(projectMap)">Reset Map</button>`
+                <h1>Legend <button class="rounded" id="reset" onclick="resetMap(projectMap)">Reset Map</button>
 </h1>
                 <!-- this will be auto-populated with info from your marker array -->
                 <div id="map_legend"></div>
@@ -80,12 +80,18 @@
          // async function in theory should speed things up
          // using .then promise syntax really simplifies the code -- sorry we
          // haven't learned it in class!
+
+
+         
          const addMD = async function (url, selector, parser) {
              return fetch(url)
                  .then( response => response.text())
                  .then( (response =>
                      document.querySelector(selector).innerHTML += parser.render(response)))
          }
+         
+
+
          // we define the main actions of the script as a function which wil lbe run when the
          // page resources have been completely loaded.
          //window.
