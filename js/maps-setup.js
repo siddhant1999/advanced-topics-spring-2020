@@ -25,7 +25,7 @@
 
 // map initialization variables
 let projectMap, // this will hold the map once it's initialized
-    myCenter = [ 55.4907, -1.594], // *latitude*, then longitude
+    myCenter = [22.5, 72.595007], // *latitude*, then longitude
     myZoom = 7; // set your preferred zoom here. higher number is closer in.
                 // I set the zoom wide to give access to context before zooming in
 
@@ -85,6 +85,121 @@ let gryfCol = 'yellow',
 // These are placeholder arrays; we use them to generate other JS variables
 // that will be more useful to us later on
 // but writing them this way keeps the code as D.R.Y. as possible
+let GandhiPath = [
+    {
+        description: "12-Mar-30",
+        title: "Sabarmati Ashram",
+        position:[23.074869, 72.593681]
+    },
+    {
+        description: "12-Mar-30",
+        title: "Aslali",
+        position:[22.917233, 72.592607],
+        
+    },
+    {
+        description: "13-Mar-30",
+        title: "Navagam", 
+        position:[22.783647, 72.590204]
+    },
+    {
+        description: "14-Mar-30",
+        title: "Matar", 
+        position:[22.703011, 72.655296]
+    },
+    {
+        description: "15-Mar-30",
+        title: "Nadiad", 
+        position:[22.691586, 72.863365]
+    },
+    {
+        description: "16-Mar-30",
+        title: "Anand", 
+        position:[22.564518, 72.928871]
+    },
+    {
+        description: "18-Mar-30",
+        title: "Borsad", 
+        position:[22.412542, 72.898495]
+    },
+    {
+        description: "19-Mar-30",
+        title: "Kareli", 
+        position:[22.199369, 72.865605]
+    },
+    {
+        description: "21-Mar-30",
+        title: "Ankhi", 
+        position:[22.054543, 72.805562]
+    },
+    {
+        description: "22-Mar-30",
+        title: "Amod", 
+        position:[21.96671, 72.833806]
+    },
+    {
+        description: "23-Mar-30",
+        title: "Samni", 
+        position:[21.873296, 72.928283]
+    },
+    {
+        description: "25-Mar-30",
+        title: "Derol", 
+        position:[21.767764, 72.931765]
+    },
+    {
+        description: "26-Mar-30",
+        title: "Ankleshwar", 
+        position:[21.624849, 73.003248]
+    },
+    {
+        description: "27-Mar-30",
+        title: "Mangrol", 
+        position:[21.62950515,72.94033955]
+    },
+    {
+        description: "28-Mar-30",
+        title: "Umrachi", 
+        position:[21.17889, 72.804377]
+    },
+    {
+        description: "29-Mar-30",
+        title: "Bhatgam", 
+        position:[21.375971, 72.743184]
+    },
+    {
+        description: "30-Mar-30",
+        title: "Delad", 
+        position:[21.282189, 72.992736]
+    },
+    {
+        description: "01-Apr-30",
+        title: "Surat", 
+        position:[21.202746, 72.838829]
+    },
+    {
+        description: "02-Apr-30",
+        title: "Vanz", 
+        position:[21.093953, 72.892652]
+    },
+    {
+        description: "03-Apr-30",
+        title: "Navsari", 
+        position:[20.948135, 72.960489]
+    },
+    {
+        description: "04-Apr-30",
+        title: "Matwad", 
+        position:[20.911835, 72.848108]
+    },
+    {
+        description: "05-Apr-30",
+        title: "Dandi", 
+        position:[20.887047, 72.805297]
+    }
+]
+
+/*
 let slythMarkerInfo =
     [
         {position: [55.48997247517858,-1.5944015979766843],
@@ -111,15 +226,21 @@ let slythMarkerInfo =
       title: "Dumbledore Lies Dying",
       description: "<p>Afflicted by a curse for over a year, and gravely weakened by a powerful poison, Dumbledore lies on the ground, barely mobile.</p>"
      }];
-
-
+*/
+/*
 let gryfMarkers = processMarkerLayer(gryfMarkerInfo,
                                      {description: 'Gryffindor: People and Places', defaultIcon: gryfIcon}),
     slythMarkers = processMarkerLayer(slythMarkerInfo,
                                       {description: 'Slytherin: Peple and Places', defaultIcon: slythIcon});
+*/
 
-
-
+let gandhiMarkers = processMarkerLayer(
+    GandhiPath,
+    {
+        description: 'Gandhi\'s Salt March Path',
+        defaultIcon: gryfIcon
+    }
+    );
 //////////////////////////////
 // MAP DATA PART 2: GEOJSON //
 //////////////////////////////
@@ -130,7 +251,9 @@ let gryfMarkers = processMarkerLayer(gryfMarkerInfo,
 // but essentially: we can add all kinds of features here, including polygons and other shapes
 // you can create geoJSON layers here: http://geojson.io/
 // and learn more about the format here: https://en.wikipedia.org/wiki/GeoJSON
-// to set the line and fill color, you will need to set the `myColor` property as below. 
+// to set the line and fill color, you will need to set the `myColor` property as below.
+
+/*
 const townsData={
     "type": "FeatureCollection",
     "description": "Magical Municipalities",
@@ -157,6 +280,8 @@ const townsData={
 }
 
 let towns = processJSONLayer(townsData)
+*/
+
 
 ////////////////////////////////////////////////////////
 // MAP DATA PART 3: DIRECT CREATION OF SHAPE OVERLAYS //
@@ -166,6 +291,8 @@ let towns = processJSONLayer(townsData)
 // Hogwarts Buildings Objects and LayerGroup
 // API docs: https://leafletjs.com/reference-1.5.0.html#polygon
 //  (keep scrolling for docs on rectangles and circles)
+
+/*
 let gryffindor = L.rectangle([[ 55.49021561150901, -1.5941441059112549],
                               [55.49107265510559,-1.5931355953216553]], {
     color: gryfCol,
@@ -200,7 +327,7 @@ let headmasterTower = L.circle([55.4907, -1.5944], {
 
 let houses = processManualLayers([gryffindor, slytherin, headmasterTower],
                                  {description: 'Important Hogwarts Buildings'});
-
+*/
 
 
 
@@ -235,7 +362,7 @@ let paths = processManualLayers([vanishingPath, tunnelPath, horcruxPath], {descr
 // these layers will be added to the map
 // you should change these variable names
 // to align with the variables you've defiend above
-let allLayers = [gryfMarkers, slythMarkers, towns, houses, paths];
+let allLayers = [gandhiMarkers];
 
 
 ///////////////////////////////////////
