@@ -95,106 +95,106 @@ let GandhiPath = [
         description: "12-Mar-30",
         title: "Aslali",
         position:[22.917233, 72.592607],
-        
+
     },
     {
         description: "13-Mar-30",
-        title: "Navagam", 
+        title: "Navagam",
         position:[22.783647, 72.590204]
     },
     {
         description: "14-Mar-30",
-        title: "Matar", 
+        title: "Matar",
         position:[22.703011, 72.655296]
     },
     {
         description: "15-Mar-30",
-        title: "Nadiad", 
+        title: "Nadiad",
         position:[22.691586, 72.863365]
     },
     {
         description: "16-Mar-30",
-        title: "Anand", 
+        title: "Anand",
         position:[22.564518, 72.928871]
     },
     {
         description: "18-Mar-30",
-        title: "Borsad", 
+        title: "Borsad",
         position:[22.412542, 72.898495]
     },
     {
         description: "19-Mar-30",
-        title: "Kareli", 
+        title: "Kareli",
         position:[22.199369, 72.865605]
     },
     {
         description: "21-Mar-30",
-        title: "Ankhi", 
+        title: "Ankhi",
         position:[22.054543, 72.805562]
     },
     {
         description: "22-Mar-30",
-        title: "Amod", 
+        title: "Amod",
         position:[21.96671, 72.833806]
     },
     {
         description: "23-Mar-30",
-        title: "Samni", 
+        title: "Samni",
         position:[21.873296, 72.928283]
     },
     {
         description: "25-Mar-30",
-        title: "Derol", 
+        title: "Derol",
         position:[21.767764, 72.931765]
     },
     {
         description: "26-Mar-30",
-        title: "Ankleshwar", 
+        title: "Ankleshwar",
         position:[21.624849, 73.003248]
     },
     {
         description: "27-Mar-30",
-        title: "Mangrol", 
+        title: "Mangrol",
         position:[21.62950515,72.94033955]
     },
     {
         description: "28-Mar-30",
-        title: "Umrachi", 
+        title: "Umrachi",
         position:[21.17889, 72.804377]
     },
     {
         description: "29-Mar-30",
-        title: "Bhatgam", 
+        title: "Bhatgam",
         position:[21.375971, 72.743184]
     },
     {
         description: "30-Mar-30",
-        title: "Delad", 
+        title: "Delad",
         position:[21.282189, 72.992736]
     },
     {
         description: "01-Apr-30",
-        title: "Surat", 
+        title: "Surat",
         position:[21.202746, 72.838829]
     },
     {
         description: "02-Apr-30",
-        title: "Vanz", 
+        title: "Vanz",
         position:[21.093953, 72.892652]
     },
     {
         description: "03-Apr-30",
-        title: "Navsari", 
+        title: "Navsari",
         position:[20.948135, 72.960489]
     },
     {
         description: "04-Apr-30",
-        title: "Matwad", 
+        title: "Matwad",
         position:[20.911835, 72.848108]
     },
     {
         description: "05-Apr-30",
-        title: "Dandi", 
+        title: "Dandi",
         position:[20.887047, 72.805297]
     }
 ]
@@ -237,7 +237,7 @@ let gryfMarkers = processMarkerLayer(gryfMarkerInfo,
 let gandhiMarkers = processMarkerLayer(
     GandhiPath,
     {
-        description: 'Gandhi\'s Salt March Path',
+        description: '',
         defaultIcon: gryfIcon
     }
     );
@@ -382,14 +382,14 @@ let allLayers = [gandhiMarkers];
  * create a Leaflet map inside an element, add base layer and return the map as a return value
  * @param {HTMLElement|string} element: can be either a full HTMLElement or the ID attribute
  * of a DOM node
- * @returns {Object} a Leaflet map object 
+ * @returns {Object} a Leaflet map object
  */
 function createMap (element) {
     const map = L.map(element, {renderer:L.canvas(), preferCanvas: true}).setView(myCenter, myZoom);
     // now we add the base layer
     // you can change this if you want!
     // if your tiles seem to load very slowly, you may want to generate your own accessToken
-    // and insert the value in `accessToken`, below. 
+    // and insert the value in `accessToken`, below.
     // see: https://docs.mapbox.com/help/how-mapbox-works/access-tokens/#creating-and-managing-access-tokens
     // to change the tile layer, change the `id` attribute below.
     // some valid options include: mapbox/streets-v11, mapbox/light-v10, mapbox/satellite-v9, mapbox/satellite-streets-v11 mapbox/dark-v10, mapbox/outdoors-v11
@@ -412,18 +412,18 @@ function createMap (element) {
  * @param {string} markerInfo[].title
  * @param {Array|Object} markerInfo[].position
  * @param {Object} layerGroup
- * @returns {Object} the modified layerGroup object 
+ * @returns {Object} the modified layerGroup object
  */
 function processMarkerLayer (markerInfo, options) {
     let layerGroup = L.layerGroup([], options);
     // iterate over the marker info array, adding to the main marker layer but
-    // *also* to another layer if the icon property is set. 
+    // *also* to another layer if the icon property is set.
     for (const m of markerInfo) {
         // define a Leaflet marker object for each marker
         // we pass two parameters: a position (2-value array of lat & lng vals)
         // and an object containing marker propertie
         let marker =  L.marker (m.position, {
-            // We set the icon 
+            // We set the icon
             icon:   m.icon || layerGroup.options.defaultIcon || L.Icon(),
             title: m.title,
             description: m.description,
@@ -447,14 +447,14 @@ function processMarkerLayer (markerInfo, options) {
  * for compatibility with marker layers.
  * The custom property `feature.properties.myColor` will also be used to set line and
  * fill colors.
- * 
+ *
  * @param {GeoJSON} jsonData
- * @returns {Object} the newly-created geoJSON layer 
+ * @returns {Object} the newly-created geoJSON layer
  */
 function processJSONLayer (jsonData) {
     return L.geoJSON(jsonData, {
         // the 'style' option is a *function* that modifies some
-        // feature properties.  
+        // feature properties.
         // cf https://leafletjs.com/reference-1.5.0.html#geojson-style
         style: function(feature) {
             let c = feature.properties.myColor;
@@ -486,10 +486,10 @@ function processJSONLayer (jsonData) {
  * The `options` parameter should include a `description` property,
  * (NOTE: this is *separate* from the description of the individual layers!!)
  * which will also be used by `addLayerToLegendHTML` and in the layers
- * control box. 
+ * control box.
  * @param {} layerArray
  * @param {} options
- * @returns {} 
+ * @returns {}
  */
 function processManualLayers (layerArray, options = {description: 'Unnamed Layer'}) {
     for (const l of layerArray) {
@@ -506,7 +506,7 @@ function assembleTexts (feature) {
         tooltip = 'Untitled Tooltip',
         popup = '<h2>Untitled</h2>',
         legend = 'Untitled';
-    
+
     if (opts.title) {
         popup = `<h2>${opts.title}</h2>` + (opts.description || '');
         tooltip = opts.title;
@@ -525,27 +525,26 @@ function assembleTexts (feature) {
  * `options.title`, or 'no title', in that order.
  * @param {Array} layerGroup
  * @param {string} querySelector
- * @returns {string} innerHTML content of the legend element 
+ * @returns {string} innerHTML content of the legend element
  */
 function addLayerToLegendHTML (layerGroup, el) {
-    let output = `<div class="legend-content-group-wrapper"><h2>${layerGroup.options.description}</h2>`;
+    let output = "";
     for (let l in layerGroup._layers) {
         // this is hideously ugly! very roundabout way
         // to access anonymous marker from outside the map
         let current = layerGroup._layers[l];
         let info = assembleTexts(current).legend;
         output +=  `
-<div class="pointer" onclick="locateMapFeature(projectMap._layers[${layerGroup._leaflet_id}]._layers[${l}])"> 
-    ${info} 
+<div class="pointer" onclick="locateMapFeature(projectMap._layers[${layerGroup._leaflet_id}]._layers[${l}])">
+    ${info}
 </div>`;
     }
-    output += '</div>'
     el.innerHTML += output;
     return el.innerHTML
 }
 
 /* a function that will run when the page loads.  It creates the map
-   and adds the existing layers to it. You probably don't need to change this function; 
+   and adds the existing layers to it. You probably don't need to change this function;
    instead, change data and variable names above, or change some of the helper functions that
    precede this function.
  */
@@ -580,7 +579,7 @@ async function initializeMap() {
  * @param {Object} marker
  */
 function locateMapFeature (marker) {
-    marker.getLatLng ? projectMap.panTo(marker.getLatLng(), {animate: true, duration: 1.5}).setZoom(16) : projectMap.fitBounds(marker.getBounds()); 
+    marker.getLatLng ? projectMap.panTo(marker.getLatLng(), {animate: true, duration: 1.5}).setZoom(16) : projectMap.fitBounds(marker.getBounds());
     marker.openPopup();
 }
 

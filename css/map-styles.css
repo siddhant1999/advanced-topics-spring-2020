@@ -1,55 +1,122 @@
+@font-face {
+  font-family: Muara;
+  src: url(./muara.ttf);
+}
 
 /* Styles *exclusively* for the spatial history assignment */
 
 .main-container {
     grid-template-areas: "intro map legend" "main main main";
-    grid-auto-columns: 1fr;
+    grid-auto-columns: 5fr 6fr 4fr;
 }
 
 section#intro {
     grid-area: intro;
-    background-color: var(--color-highlight1);
-    border: 1px solid var(--color-custom-borders);
+    background-color: #dce6de;
+    border: 1px solid #809c85;
+    padding: 26px 30px;
+}
+
+#test h1 {
+    font-family: "Muara";
+    font-size: 46px;
+    line-height: 40px;
+    margin: 4px 0px 12px 0px;
+    display: flex;
+}
+
+#test p {
+    font-size: 15px;
+    line-height: 20px;
 }
 
 
 section#map_canvas {
     grid-area: map;
     background-color: var(--color-highlight2);
-    border: 1px solid var(--color-custom-borders);
+    border: 1px solid black;
 }
 
 section#legend {
+    padding: 26px 30px;
     grid-area: legend;
-    background-color: var(--color-highlight2);
-    border: 1px solid var(--color-custom-borders);
+    background: #f2eee6;
+    border: 1px solid #cc916e;
+}
+
+#legend {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#legend .row {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+}
+
+#legend-label {
+    margin-bottom: 0px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+#legend .row h1 {
+    font-family: "Muara";
+    font-size: 46px;
+    line-height: 40px;
+    margin: 4px 0px;
+    display: flex;
+    align-items: center;
 }
 
 section#maintext {
     grid-area: main;
-    background-color: var(--color-highlight1);
-    border: 1px solid var(--color-custom-borders);
+    background-color: #e4e4f0;
+    border: 1px solid #8f8fb3;
+    padding: 26px 30px;
+}
+
+#maintext h1 {
+    font-family: "Muara";
+    font-size: 46px;
+    line-height: 40px;
+    margin: 4px 0px 12px 0px;
+}
+
+#maintext p {
+    font-size: 15px;
+    line-height: 20px;
 }
 
 /* we use an extra div here to allow the "legend" text to sit by itself */
 /* arrange the legend elements using flexbox (just for fun) */
 div#map_legend {
-    width: 100%;
-    display: grid;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 5px;
+    margin-top: 10px;
+    display: flex;
     flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fit, 45%);
-
+    justify-content: flex-start;
+    gap: 5px;
 }
+
 div#map_legend div.pointer {
-    border: 1px black solid;
-    border-radius: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 152px;
+    background: #F76B1C;
+    padding: 0px 8px;
+    margin-bottom: 5px;
+    margin-right: 6px;
+    border-radius: 4px;
     /* flex-basis: 500px; */
     cursor:pointer;
+    transition: 0.1s;
+    box-shadow: 0px 2px 5px -4px rgba(0,0,0,0.5);
+}
+
+div#map_legend div.pointer:hover {
+    transform: translateY(-2px);
+    transition: 0.1s;
 }
 
 div.pointer h1 {
@@ -64,9 +131,19 @@ div.pointer img {
     margin: 5px;
 }
 
-/* Leaflet Popups crate 2 divs each: div.leaflet-popup-content-wrapper and 
+/* Leaflet Popups crate 2 divs each: div.leaflet-popup-content-wrapper and
    div.leaflet-popup-content. You can ddress them as you like.*/
+div.leaflet-popup-content-wrapper {
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+
 div.leaflet-popup-content {
+    margin: 10px 16px;
+}
+
+.leaflet-popup-content h2 {
+    margin: 0px;
 }
 
 div.leaflet-popup-content img {
@@ -75,6 +152,7 @@ div.leaflet-popup-content img {
 @media only screen and (max-width:1200px) {
     .main-container {
         grid-template-areas: "intro intro" "map legend" "main main";
+        grid-auto-columns: 8fr 4fr;
     }
 }
 
@@ -100,11 +178,10 @@ div.leaflet-popup-content img {
 
 
 /* if you want, you can make the text in the legend less ugly by adding
-extra css instructions here, or adding classes when you create the 
+extra css instructions here, or adding classes when you create the
 legneds in javascript. Advisable! */
 
 div#map_legend h1 {
-    
 }
 
 div#map_legend h3 {
@@ -121,13 +198,19 @@ button.rounded {
   -webkit-border-radius:5px;
   -moz-border-radius:5px;
   border-radius:5px;
-  border: 1px black solid;
 }
 button#hide {
   background:orange;
 }
 button#reset {
-  background:green;
+    color: white;
+    background: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
+    margin: 10px 0px;
+}
+
+#reset:hover {
+    background: linear-gradient(90deg, #FFE53B 0%, #FF2525 74%);
+    opacity: 1!important;
 }
 
 /* use these last few to style the text inside the
@@ -158,5 +241,3 @@ div.gm-style-iw img {
 div.gm-style-iw blockquote {
     font-family:cursive;
 }
-
-
