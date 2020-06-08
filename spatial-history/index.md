@@ -1,4 +1,4 @@
-# Next Section
+# Marching Begins
 
 Marching began at the break of dawn on March 12, 1930 as Gandhi along with 79 others embarked from Sabarmati Ashram to the town of Aslali, Gujarat ([CWMG Vol. XLIII, 59 - 63](https://www.gandhiheritageportal.org/cwmg_volume_thumbview/NDM=#page/96/mode/2up)). This also marked the public declaration by Gandhi to all Indians to disobey British laws and take to their nearest shore to produce their own salt. Along the route the marchers stopped at many key towns to deliver speeches and rally more to their cause. For the next 23 days the marchers began their march promptly after morning prayers and spread their mission to combat the British salt laws as they meandered southwards. As the days went on more volunteers attempted to join the march and, slowing at first, Gandhi began allowing them to march alongside them.
 
