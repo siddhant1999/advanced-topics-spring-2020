@@ -12,7 +12,7 @@
 
 section#intro {
     grid-area: intro;
-    background-color: #dce6de;
+    background-color: #b8dabf;
     border: 1px solid #809c85;
     padding: 26px 30px;
 }
@@ -74,7 +74,7 @@ section#legend {
 
 section#maintext {
     grid-area: main;
-    background-color: #e4e4f0;
+    background-color: white;
     border: 1px solid #8f8fb3;
     padding: 26px 30px;
 }
