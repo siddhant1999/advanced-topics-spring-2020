@@ -37,7 +37,7 @@ var loadPopcorn = function () {
     type: "HYBRID", //HYBRID (default), ROADMAP, SATELLITE, TERRAIN, STREETVIEW,
     //lat: 43.665429,
     //lng: -79.403323,
-    location: "Verrazano-Narrows bridge", //  The location we want our map to display at
+    location: "Mesa, Arizona", //  The location we want our map to display at
     zoom: 15 // Setting the zoom that we would like 
   });  // don't forget to close your brackets
 

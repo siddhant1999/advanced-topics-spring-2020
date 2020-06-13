@@ -26,8 +26,14 @@ var loadPopcorn = function(){
     // Instructions are here: https://github.com/jsoma/tabletop#1-publishing-your-google-sheet
     // It's very important, though, to keep the same column headers as in our example spreadsheet:
     // https://docs.google.com/spreadsheets/d/1pL_Lj62_ZcW7iawTCQ_5BQsmdynCtC8y5BCNy3k2LOM/
-    let public_spreadsheet_key = 'https://docs.google.com/spreadsheets/d/1pL_Lj62_ZcW7iawTCQ_5BQsmdynCtC8y5BCNy3k2LOM/pubhtml?gid=0&single=true';
-
+    
+    
+    // let public_spreadsheet_key = 'https://docs.google.com/spreadsheets/d/1pL_Lj62_ZcW7iawTCQ_5BQsmdynCtC8y5BCNy3k2LOM/pubhtml?gid=0&single=true';
+    // https://docs.google.com/spreadsheets/d/1YNvva71qPuIgBUdj5QjvzW3kY8dEDjg3ESxG9Gb7yy8/edit?usp=sharing
+    
+    // the first is the api style key
+    // let public_spreadsheet_key = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQEnv8YS8gY6_v2OFrHJBNSb68DN2cHBwWHZsgLN1RlVFNuOtU3vjYXZXt4qfbo3S7-_hK7t5E8rqVa/pubhtml?gid=1715955432&single=true'
+    let public_spreadsheet_key = 'https://docs.google.com/spreadsheets/d/1YNvva71qPuIgBUdj5QjvzW3kY8dEDjg3ESxG9Gb7yy8/edit?usp=sharing'
     // now we are going to use the tabletop.js library, which was called in our 
     // HTML file, to grab the date from the spreadsheet and process it so that 
     // popcorn can use it.  
@@ -39,7 +45,7 @@ var loadPopcorn = function(){
 
     // if you're having problems with this, you can uncomment the next line and 
     // look in the browser's console to see if the data looks like it's supposed to.
-    // console.log(mytables.data);
+    console.log(mytables.data);
 
     // play the video right away
     // pop.play();
