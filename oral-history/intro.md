@@ -1,3 +1,3 @@
-# intro here
+## Introduction
 
-Just a few simple things here please. 
+The devastating attacks on September 11th, 2001 took the lives of thousands and left the lives of countless more permanently scarred. As the world stood glued to their television screens as the twin towers fell, one terrorist organization and the image of their leader was shown across all major news networks. Osama Bin Laden’s face was shown to millions of Americans shortly after the terrorist attacks ([History.com](https://www.history.com/topics/21st-century/9-11-attacks)). The image of Bin Laden, with a long beard and a white turban was imprinted upon a generation of Americans. As anger poured out against Bin Laden it also, unfortunately, carried over to those who practiced the religion of Islam. Islamophobia was at an all-time high and hate crimes against the Muslim community broke out across the United States ([pri.org](https://www.pri.org/stories/2016-09-12/data-hate-crimes-against-muslims-increased-after-911)). While all hate crime is a disgrace the Sikh community found itself also at the receiving end of much of this violence and vitriol. 
