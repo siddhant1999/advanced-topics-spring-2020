@@ -80,7 +80,9 @@ h1 {
     width: 50%;
     margin: 0 auto;
 }
-
+#osama.img {
+    max-width: 50%;
+}
 #markdowndiv0 {
     animation: fadeIn ease 5s;
     -webkit-animation: fadeIn ease 5s;
