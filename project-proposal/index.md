@@ -1,6 +1,3 @@
-# Project Proposal
-
-
 ## Methods
 ---
 There are a number of different APIs and tools what we’ll be using to gather information and display in accurately.
@@ -22,7 +19,7 @@ Once complete the users will be able to quickly glance at the severity of the sp
 
 For this map we’ll using many of the same data sources and tools as the previous map.
 
-US COVID-19 State spread data will be sourced using the Health API. This API works similarly to the one above where we can source the number of cases by date and state.
+US COVID-19 State spread data will be sourced using the [Health API](https://documenter.getpostman.com/view/8854915/SzS7R74s?version=latest). This API works similarly to the one above where we can source the number of cases by date and state.
 
 The unique part of this map is tweet data. We’ll be pulling from three different sources, namely:
 - State Government Twitter Accounts
@@ -73,7 +70,7 @@ This project that aims to make COVID-19 spread data more digestible is important
 ---
 
 | Activity |      Price      |  Justification |
-|----------|-------------:|------|
+|----------|----------------|-----------|
 | Software Development Stipend |  $6125 | Given 7 weeks of work with 35 hour workweeks and a modest pay of $25/hr |
 | UI/UX Design Work | $875| 35 hours of work at $25/hr. Without proper UI/UX consulation we're likely to create a site that does convey the necessary information but does not capture the user and may be difficult to navigate|
 | Hosting | $600 | With web hosting ~$50/mo we can expect to need $600 to keep the service up and running for a year |
